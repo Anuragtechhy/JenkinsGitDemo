@@ -9,6 +9,12 @@ pipeline {
             }
         }
 
+        stage('Pipeline Update Check') {
+            steps {
+                echo 'Updated Jenkinsfile loaded from GitHub!'
+            }
+        }
+
         stage('Run Program') {
             steps {
                 echo 'Running Python program'
