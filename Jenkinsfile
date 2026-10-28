@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+    APP_NAME = 'HRMS'
+    TEST_ENV = 'QA'
+}
+
     stages {
         stage('Check Python') {
             steps {
@@ -21,6 +26,13 @@ pipeline {
                 bat 'python main.py'
             }
         }
+
+        stage('Show Environment') {
+    steps {
+        echo "Application: ${env.APP_NAME}"
+        echo "Test environment: ${env.TEST_ENV}"
+    }
+}
 
      
     }
