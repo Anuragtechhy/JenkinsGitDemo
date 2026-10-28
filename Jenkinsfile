@@ -35,5 +35,10 @@ pipeline {
         always {
             echo 'Pipeline execution has finished.'
         }
+        stage('Failure Demo') {
+    steps {
+        error 'Intentional failure to test post conditions'
+    }
+}
     }
 }
