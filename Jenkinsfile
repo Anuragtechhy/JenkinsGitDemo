@@ -21,6 +21,12 @@ pipeline {
                 bat 'python main.py'
             }
         }
+
+        stage('Failure Demo') {
+            steps {
+                error 'Intentional failure to test post conditions'
+            }
+        }
     }
 
     post {
@@ -35,10 +41,5 @@ pipeline {
         always {
             echo 'Pipeline execution has finished.'
         }
-        stage('Failure Demo') {
-    steps {
-        error 'Intentional failure to test post conditions'
-    }
-}
     }
 }
