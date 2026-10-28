@@ -22,11 +22,7 @@ pipeline {
             }
         }
 
-        stage('Failure Demo') {
-            steps {
-                error 'Intentional failure to test post conditions'
-            }
-        }
+     
     }
 
     post {
