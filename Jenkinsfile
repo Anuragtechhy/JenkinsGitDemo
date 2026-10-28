@@ -21,7 +21,9 @@ pipeline {
                 bat 'python main.py'
             }
         }
-            post {
+    }
+
+    post {
         success {
             echo 'Pipeline completed successfully!'
         }
@@ -33,6 +35,5 @@ pipeline {
         always {
             echo 'Pipeline execution has finished.'
         }
-    }
     }
 }
