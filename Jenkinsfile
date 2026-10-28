@@ -21,5 +21,18 @@ pipeline {
                 bat 'python main.py'
             }
         }
+            post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+
+        failure {
+            echo 'Pipeline failed. Check Console Output.'
+        }
+
+        always {
+            echo 'Pipeline execution has finished.'
+        }
+    }
     }
 }
